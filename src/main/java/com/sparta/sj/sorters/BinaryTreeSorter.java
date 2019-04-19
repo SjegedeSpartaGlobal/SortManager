@@ -1,5 +1,4 @@
 package com.sparta.sj.sorters;
-//package com.sparta.sj.binary_tree;
 
 
 import com.sparta.sj.binary_tree.BinarySearchTree;

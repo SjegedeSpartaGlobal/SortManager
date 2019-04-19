@@ -1,5 +1,6 @@
 package com.sparta.sj.binary_tree;
 
+import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class BinarySearchTree implements BinaryTree {
     private LinkedList<Integer> descendingList;
     private LinkedList<Integer> stack;
 
-
+    private static Logger logger = Logger.getLogger(BinarySearchTree.class.getName());
 
     public class Node {
 
@@ -85,7 +86,7 @@ public class BinarySearchTree implements BinaryTree {
     @Override
     public int getLeftChild(int element){
         Node node = findNode(element, root);
-        System.out.println("node val: "+node.getValue()+" element: "+element+" current node: "+currentNode.getLeft().getValue());
+        logger.info("node val: "+node.getValue()+" element: "+element+" current node: "+currentNode.getLeft().getValue());
         if(hasLeft(currentNode)){
             return currentNode.getLeft().getValue();
         }
@@ -95,7 +96,7 @@ public class BinarySearchTree implements BinaryTree {
     @Override
     public int getRightChild(int element){
         Node node = findNode(element, root);
-        System.out.println("node val: "+node.getValue()+" element: "+element);
+        logger.info("node val: "+node.getValue()+" element: "+element);
         if(hasRight(currentNode)){
             System.out.println("runs has right");
             return currentNode.getRight().getValue();
@@ -138,7 +139,6 @@ public class BinarySearchTree implements BinaryTree {
     private void addElementHelper(int element, Node current){
         int currentElement =  current.getValue();
         Node node = new Node(element);
-//        System.out.println("element: "+element+" node e: "+currentElement);
         if(element<currentElement){
             if(current.getLeft()==null){
                 current.setLeft(node);
@@ -149,9 +149,6 @@ public class BinarySearchTree implements BinaryTree {
         }else if(element>currentElement){
             if(current.getRight()==null){
                 current.setRight(node);
-                if(element==5){
-//                    System.out.println("5 set to current el: "+currentElement);
-                }
             }else if(current.getRight()!=null){
                 current = current.getRight();
                 addElementHelper(element, current);
@@ -188,19 +185,15 @@ public class BinarySearchTree implements BinaryTree {
     //finds the node that matches the element
     private Node findNode(int element, Node current){
         int currentElement =  current.getValue();
-        System.out.println("element: "+element+" currentElement: "+currentElement);
+        logger.info("element: "+element+" currentElement: "+currentElement);
 
         if(element==currentElement){
-//            if(currentElement==1) {
-            System.out.println("found node: "+current.getValue());
-//                System.out.println("has right: "+hasRight(newCurrent));
+            logger.info("found node: "+current.getValue());
             currentNode = current;
             return current;
-
         }
         if(element<currentElement){
             if(current.getLeft()==null){
-//                currentNode = newCurrent;
                 return current;
             }else if(current.getLeft()!=null){
                 current = current.getLeft();
@@ -208,7 +201,6 @@ public class BinarySearchTree implements BinaryTree {
             }
         }else if(element>currentElement){
             if(current.getRight()==null){
-//                currentNode = newCurrent;
                 return current;
             }else if(current.getRight()!=null){
                 current = current.getRight();

@@ -1,9 +1,13 @@
 package com.sparta.sj.view;
 
+import org.apache.log4j.Logger;
+
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class DisplayManager {
+
+    private Logger logger = Logger.getLogger(DisplayManager.class.getName());
 
     public void printSortedArray(int[] sortedArray, String sorter, long timeTaken){
         DecimalFormat df = new DecimalFormat("###,###.####");

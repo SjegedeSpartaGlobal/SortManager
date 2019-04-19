@@ -1,0 +1,1 @@
+SortManger: Allows you to use different sort algorithms for sorting integers

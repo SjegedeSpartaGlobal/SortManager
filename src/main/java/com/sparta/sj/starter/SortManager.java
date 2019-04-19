@@ -16,7 +16,6 @@ public class SortManager {
     }
 
     public void sortArray() {
-        log.trace("Hello");
         int[] unsortedArray = generatorArray(20);
         Sorter sorter = SortFactory.getInstance();
         long start = System.nanoTime();
