@@ -6,6 +6,7 @@ public class BubbleSorter implements Sorter{
         return bubbleSort(arrayToSort);
     }
 
+    //sorts the list by comparing 2 elements if the elements are in the incorrect order they are swapped
     private int[] bubbleSort(int[] a){
         int length = a.length;
         int next1 = 0;

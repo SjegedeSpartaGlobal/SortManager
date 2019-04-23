@@ -83,6 +83,7 @@ public class BinarySearchTree implements BinaryTree {
         return findElementHelper(value, root);
     }
 
+    //gets the left child of the current node
     @Override
     public int getLeftChild(int element){
         Node node = findNode(element, root);
@@ -93,6 +94,7 @@ public class BinarySearchTree implements BinaryTree {
         return 0;
     }
 
+    //gets the right child of the current node
     @Override
     public int getRightChild(int element){
         Node node = findNode(element, root);

@@ -2,6 +2,7 @@ package com.sparta.sj.sorters;
 
 public class MergeSorter implements Sorter {
 
+    //splits the array in half recursively then combines them in the correct order
     public int[] mergeSort(int[] array){
         int length = array.length;
         int half = length/2;

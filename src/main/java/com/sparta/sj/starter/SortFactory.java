@@ -36,7 +36,7 @@ public class SortFactory {
 
     }
 
-
+    //Gets the sorter instance from the properties file
     public static Sorter getInstance() {
 
         try {
